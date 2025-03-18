@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>My Portfolio</title>
     <style>
         html, body {
@@ -10,16 +10,24 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
-            background-color: #f0f0f0; /* Light gray background */
+            background-color: #f0f0f0;
         }
-        iframe {
+        .pdf-container {
             width: 100vw;
             height: 100vh;
+            overflow: auto; /* Enables scrolling */
+            -webkit-overflow-scrolling: touch; /* Makes scrolling smooth on iOS */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
             border: none;
         }
     </style>
 </head>
 <body>
-    <object data="Design_Portfolio.pdf#toolbar=0" type="application/pdf" style="width:100vw; height:100vh; object-fit: cover;"></object>
+    <div class="pdf-container">
+        <iframe src="Design_Portfolio.pdf#toolbar=0"></iframe>
+    </div>
 </body>
 </html>
